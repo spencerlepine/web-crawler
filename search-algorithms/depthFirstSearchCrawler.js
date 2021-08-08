@@ -12,7 +12,9 @@ var depthFirstSearchCrawler = async function (url, followInternalLinks, searchDe
 
       var depthCallback = function (urlList) {
         urlList.forEach(thisUrl => {
-          if (!visitedUrls.has(thisUrl) && searchDepthLayer < searchDepthLimit) {
+          var underFetchLimit = searchDepthLimit ? searchDepthLayer < searchDepthLimit : true;
+
+          if (!visitedUrls.has(thisUrl) && underFetchLimit) {
             depthRecursionFunc(thisUrl);
           }
         });
