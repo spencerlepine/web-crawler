@@ -6,13 +6,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "redis-server --port 6371 --slaveof 127.0.0.1 6371 && node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jsdom": "^16.7.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "redis": "^3.1.2"
   }
 }

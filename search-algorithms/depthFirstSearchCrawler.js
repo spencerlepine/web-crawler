@@ -1,4 +1,5 @@
 import { fetchLinksFromUrl } from '../modules/fetchLinksFromUrl.js';
+import graphClient from '../redis/graphClient';
 
 var depthFirstSearchCrawler = async function (url, followInternalLinks, searchDepthLimit) {
   var visitedUrls = new Set();
@@ -14,6 +15,8 @@ var depthFirstSearchCrawler = async function (url, followInternalLinks, searchDe
           var underFetchLimit = searchDepthLimit ? searchDepthLayer < searchDepthLimit : true;
 
           if (!visitedUrls.has(thisUrl) && underFetchLimit) {
+            // Create the edge in the graph
+            graphClient.addEdge(url, thisUrl);
             depthRecursionFunc(thisUrl);
           }
         });

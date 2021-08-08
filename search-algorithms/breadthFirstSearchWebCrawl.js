@@ -1,5 +1,6 @@
 import Stack from '../data-structures/Stack.js';
 import { fetchLinksFromUrl } from '../modules/fetchLinksFromUrl.js';
+import graphClient from '../redis/graphClient.js';
 
 var breadthFirstSearchWebCrawl = async function (url, followInternalLinks, searchDepthLimit) {
   var visitedUrls = new Set();
@@ -15,11 +16,12 @@ var breadthFirstSearchWebCrawl = async function (url, followInternalLinks, searc
       currentUrl = queue.pop();
 
       var queueCallback = function (urlList) {
-        urlList.forEach(url => {
-          if (!visitedUrls.has(url)) {
-            visitedUrls.add(url);
-            console.log(url);
-            queue.push(url);
+        urlList.forEach(newUrl => {
+          if (!visitedUrls.has(newUrl)) {
+            visitedUrls.add(newUrl);
+            // Create the edge in the graph
+            graphClient.addEdge(url, newUrl);
+            queue.push(newUrl);
           }
         });
       }
