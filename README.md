@@ -6,11 +6,10 @@ Search the sites with either breadth first search, or depth first search.
 Every URL will be saved to a Graph (using an adjacency list). The Graph is stored with Redis.
 
 ## Setup
-  - ```sh
+  - ```console
     $ git clone https://github.com/spencerlepine/web-crawler.git
     $ cd web-crawler
-    $ npm install
-  ```
+    $ npm install```
   - Customize the web crawler configuration in ```crawler/crawlerConfig.js```
     * Choose ```breadthFirstSearch``` or ```depthFirstSearch```
     * Set the startUrl to begin crawling
