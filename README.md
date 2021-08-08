@@ -1,18 +1,26 @@
-Build a web crawler (see the Nightmare Mode content from the Recursion Review repo), to crawl the webgraph  , and utilize your implementation of Kosaraju's Algorithm to identify clusters of strongly connected web sites. Present your findings in a way that is easy for humans to understand.
+# Web Crawler with Redis Graph
+Web Crawler built with NodeJS. Fetch site data from a given URL and recursively follow links across the web.
 
-Make your web crawler robust enough to run overnight, recovering from failures, so that you can return in the morning with massive amounts of meaningful data.
- As your web crawler runs, store all the information it gathers in redis  . You will have to use the Node.js redis client  in order to do this.
+Search the sites with either breadth first search, or depth first search.
 
-https://learn-2.galvanize.com/cohorts/2907/blocks/81/content_files/Orientation%20&%20Precourse/exercises/recursion-review.md
+Every URL will be saved to a Graph (using an adjacency list). The Graph is stored with Redis.
 
-// accept a url to begin the crawl
-// recursivly follow links
-// output the url of crawled pages
+## Setup
+  - ```sh
+    $ git clone https://github.com/spencerlepine/web-crawler.git
+    $ cd web-crawler
+    $ npm install
+  ```
+  - Customize the web crawler configuration in ```crawler/crawlerConfig.js```
+    * Choose ```breadthFirstSearch``` or ```depthFirstSearch```
+    * Set the startUrl to begin crawling
+    * Add a searchDepthLimit to cap URL requests
+    * Activate following internal link URLs
+  - Invoke the WebCrawler with ```npm start```
 
-// Accept an optional configuration object as an argument that will effect the default behavior of the crawler.Consider configuring:
-// The ability to use getElementsByClassName on any of the pages you visit
-// The ability to output other kinds of information about the page such as number of script tags, distinct attributes, links to external sites, etc.
-// The option to crawl breadth first instead of depth first
-// Limit the depth or breadth of the crawl
-// Set a revisit or politeness policy
-// use web worker api
+## Export Redis Graph
+  - [Redis Dump](https://github.com/delano/redis-dump)
+    * clone this Repo
+    * run commands to install gem dependencies (refer to redis-dump/README)
+    * in project root folder, run ```./bin/redis-dump -u 127.0.0.1:6371 > db_full.json```
+    * View the json data in ```db_full.json```!
