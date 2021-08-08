@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "redis-server --port 6371 --slaveof 127.0.0.1 6371 && forever start index.js"
+    "start": "forever start index.js"
   },
   "keywords": [],
   "author": "",

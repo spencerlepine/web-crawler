@@ -6,7 +6,7 @@ class WebCrawler {
     this.searchAlgorithm = configObj.searchAlgorithm;
   }
 
-  run(searchAlgorithm) {
+  run() {
     this.searchAlgorithm(this.startUrl, this.followInternalLinks, this.searchDepthLimit);
   }
 }

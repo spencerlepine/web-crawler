@@ -2,7 +2,7 @@ import Stack from '../data-structures/Stack.js';
 import { fetchLinksFromUrl } from '../modules/fetchLinksFromUrl.js';
 import graphClient from '../redis/graphClient.js';
 
-var breadthFirstSearchWebCrawl = async function (url, followInternalLinks, searchDepthLimit) {
+var breadthFirstSearchCrawler = async function (url, followInternalLinks, searchDepthLimit) {
   var visitedUrls = new Set();
   var currentUrl = url;
   var queue = new Stack();
@@ -33,4 +33,4 @@ var breadthFirstSearchWebCrawl = async function (url, followInternalLinks, searc
   }
 }
 
-export default breadthFirstSearchWebCrawl;
+export default breadthFirstSearchCrawler;

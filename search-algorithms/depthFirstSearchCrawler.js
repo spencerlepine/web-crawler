@@ -1,5 +1,5 @@
 import { fetchLinksFromUrl } from '../modules/fetchLinksFromUrl.js';
-import graphClient from '../redis/graphClient';
+import graphClient from '../redis/graphClient.js';
 
 var depthFirstSearchCrawler = async function (url, followInternalLinks, searchDepthLimit) {
   var visitedUrls = new Set();
