@@ -1,4 +1,4 @@
-import Stack from '../data-structures/stack.js';
+import Stack from '../data-structures/Stack.js';
 import { fetchLinksFromUrl } from '../modules/fetchLinksFromUrl.js';
 
 var breadthFirstSearchWebCrawl = async function (url, followInternalLinks, searchDepthLimit) {

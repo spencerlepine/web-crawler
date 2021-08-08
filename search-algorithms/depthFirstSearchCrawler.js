@@ -1,4 +1,3 @@
-import Stack from '../data-structures/stack.js';
 import { fetchLinksFromUrl } from '../modules/fetchLinksFromUrl.js';
 
 var depthFirstSearchCrawler = async function (url, followInternalLinks, searchDepthLimit) {
