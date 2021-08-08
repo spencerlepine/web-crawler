@@ -3,10 +3,11 @@ class WebCrawler {
     this.startUrl = configObj.startUrl;
     this.followInternalLinks = configObj.followInternalLinks;
     this.searchDepthLimit = configObj.searchDepthLimit;
+    this.searchAlgorithm = configObj.searchAlgorithm;
   }
 
   run(searchAlgorithm) {
-    searchAlgorithm(this.startUrl, this.followInternalLinks, this.searchDepthLimit);
+    this.searchAlgorithm(this.startUrl, this.followInternalLinks, this.searchDepthLimit);
   }
 }
 
