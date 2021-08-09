@@ -38,7 +38,6 @@ class RedisGraph {
 };
 
 const graphClient = new RedisGraph(client);
-console.log('setting up graphClient')
 graphClient.logNodeEdges('https://en.wikipedia.org/wiki/Main_Page');
 
 export default graphClient;
