@@ -1,6 +1,6 @@
 # Web Crawler with Redis Graph
 
-Read the [blog post](https://spencerlepine.com/blog/building-a-web crawler-with-node.js).
+Read the [blog post](https://spencerlepine.com/blog/building-a-web-crawler-with-node.js).
 
 Web Crawler built with NodeJS. Fetch site data from a given URL and recursively follow links across the web.
 
