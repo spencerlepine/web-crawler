@@ -28,3 +28,7 @@ Every URL will be saved to a Graph (using an adjacency list). The Graph is store
     * note the ```slave``` and ```port``` of the ***redis-server*** (e.g. 6371)
     * in project root folder, run ```./bin/redis-dump -u 127.0.0.1:6371 > db_full.json```
     * view the Redis export in ```db_full.json```
+
+---
+
+> [spencerlepine.com](https://www.spencerlepine.com) &nbsp;&middot;&nbsp; GitHub [@spencerlepine](https://github.com/spencerlepine) &nbsp;&middot;&nbsp; Twitter [@spencerlepine](http://twitter.com/spencerlepine)
