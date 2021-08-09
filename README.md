@@ -19,6 +19,7 @@ Every URL will be saved to a Graph (using an adjacency list). The Graph is store
     * Set the startUrl to begin crawling
     * Add a searchDepthLimit to cap URL requests
     * Activate following internal link URLs
+  - Open a seperate terminal and run ```redis server```
   - Invoke the WebCrawler with ```npm start```
 
 ## Exporting the Redis Graph
