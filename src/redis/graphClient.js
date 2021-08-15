@@ -24,9 +24,9 @@ class RedisGraph {
     });
   }
 
-  logNodeEdges(node) {
+  logNodeEdges(urlStringNode) {
     console.log('\n');
-    this.client.lrange(node, 0, -1, function (error, items) {
+    this.client.lrange(urlStringNode, 0, -1, function (error, items) {
       if (error) throw error
 
       items.forEach(function (item) {
@@ -38,6 +38,5 @@ class RedisGraph {
 };
 
 const graphClient = new RedisGraph(client);
-graphClient.logNodeEdges('https://en.wikipedia.org/wiki/Main_Page');
 
 export default graphClient;
