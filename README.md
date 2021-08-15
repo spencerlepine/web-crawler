@@ -3,7 +3,7 @@
 [![version](https://img.shields.io/npm/v/redis-web-crawler.svg?style=flat-square)](http://npm.im/redis-web-crawler)
 [![downloads](https://img.shields.io/npm/dm/redis-web-crawler.svg?style=flat-square)](http://npm-stat.com/charts.html?package=redis-web-crawler&from=2015-08-01)
 
-Read the [blog post](https://spencerlepine.com/blog/building-a-web-crawler-with-node.js).
+Read the [blog post](https://spencerlepine.com/blog/building-a-web-crawler-with-node-js).
 
 Web Crawler built with NodeJS. Fetch site data from a given URL and recursively follow links across the web.
 
